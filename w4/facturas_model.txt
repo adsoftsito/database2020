@@ -1,0 +1,7 @@
+CASO FACTURAS
+
+cliente tiene rfc, nombre y direccion
+las facturas tienen folio, fecha, concepto, subtotal, iva y total
+
+un cliente solicita n facturas
+

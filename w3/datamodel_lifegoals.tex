@@ -49,5 +49,40 @@ Life Goals Relational Model
      \caption{Life Goals Relational Model}
 \end{figure}
 
+
+\section{Build Database in postgresql}
+
+\begin{enumerate}
+
+	\item
+	   ssh -i adsoft adsoft@104.198.244.0
+	\item
+	   sudo -u postgres createdb adsoft-lifegoals;
+	\item
+	   sudo -u postgres psql;	
+    \item 
+       list;	   
+	\item
+	   connect adsoft-lifegoals;
+	\item
+	   dt
+	\item
+	   create table metas(descripcion varchar(100));
+	\item
+	   select * from metas;
+	\item
+	   insert into metas(descripcion) values ('be like iron man');
+	\item
+	   update metas set descripcion='go to moon' where descripcion='be hacker';
+	\item
+	   delete from metas where descripcion=' be like the mexian ellon musk';
+
+	 
+	        
+   
+    	
+\end{enumerate}
+
+
 \end{document}
 
