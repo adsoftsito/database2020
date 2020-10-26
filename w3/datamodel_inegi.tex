@@ -167,6 +167,21 @@ select count(*), sum(codigoactividad), avg(codigoactividad), max(codigoactividad
 select * from entidades, municipios, empresas where entidades.identidad = municipios.identidad and (municipios.identidad = empresas.identidad and municipios.idmunicipio = empresas.idmunicipio); \\
 select nombreentidad, nombremunicipio, nombreempresa, latitud, longitud from entidades, municipios, empresas where entidades.identidad = municipios.identidad and (municipios.identidad = empresas.identidad and municipios.idmunicipio = empresas.idmunicipio);
 
+\item group by \\
+ select identidad, count(*) from empresas group by identidad;\\
+ select identidad, count(idmunicipio) from municipios group by identidad; \\
+ select codigoactividad, count(idempresa) from empresas group by codigoactividad;
+
+\item order by \\
+ select identidad, count(*) as numeroempresas from empresas group by identidad order by count(*) desc; \\
+ select identidad, count(idmunicipio) from municipios group by identidad order by identidad asc; \\
+ select codigoactividad, count(idempresa) from empresas group by codigoactividad order by codigoactividad asc; 
+
+\item group by, having , order by \\
+ select identidad, count(*) as numeroempresas from empresas group by identidad having count(*) = 0 order by numeroempresas asc; \\
+ select identidad, count(idmunicipio) from municipios group by identidad having count(idmunicipio) = 1 order by identidad asc; \\
+ select codigoactividad, count(idempresa) from empresas group by codigoactividad having count(idempresa) = 2  order by codigoactividad asc; 
+
 
 \end{enumerate}
 
