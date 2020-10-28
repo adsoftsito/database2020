@@ -182,7 +182,43 @@ select nombreentidad, nombremunicipio, nombreempresa, latitud, longitud from ent
  select identidad, count(idmunicipio) from municipios group by identidad having count(idmunicipio) = 1 order by identidad asc; \\
  select codigoactividad, count(idempresa) from empresas group by codigoactividad having count(idempresa) = 2  order by codigoactividad asc; 
 
+\item  in \\
+	select nombremunicipio from municipios where identidad in (select identidad from entidades where nombreentidad like 'BAJA\%'); \\
 
+select nombreempresa, latitud, longitud from empresas where identidad in (select identidad from entidades where nombreentidad like '\%AGUAS\%' );
+
+\item not in \\
+    select nombremunicipio from municipios where identidad not in (select identidad from entidades 
+where nombreentidad like '\%BAJA\%');
+
+select nombreempresa, latitud, longitud from empresas where identidad not in (select identidad from entidades where nombreentidad like '\%AGUAS\%' );
+
+\item join \\
+
+  select e.identidad, e.nombreentidad, m.nombremunicipio from entidades as e join municipios as m on e.identidad = m.identidad;
+
+\item left join \\
+select e.identidad, e.nombreentidad, m.nombremunicipio from entidades as e left join municipios as m on e.identidad = m.identidad;
+
+\item right join \\
+select e.identidad, e.nombreentidad, m.nombremunicipio from municipios as m right join entidades as e on e.identidad = m.identidad;
+
+\item join - subquerys \\
+
+select m.identidad, m.idmunicipio, m.nombremunicipio, e.nombreempresa from (select identidad, idmunicipio, nombremunicipio from municipios) as m join (select identidad, idmunicipio, nombreempresa from empresas) as e on (m.idmunicipio = e.idmunicipio and m.identidad = e.identidad);
+
+\item left join - subquerys \\
+
+select m.identidad, m.idmunicipio, m.nombremunicipio, e.nombreempresa from (select identidad, idmunicipio, nombremunicipio from municipios) as m left join (select identidad, idmunicipio, nombreempresa from empresas) as e on (m.idmunicipio = e.idmunicipio and m.identidad = e.identidad); \\
+
+\item left join - subquerys - selection \\
+
+select m.identidad, m.idmunicipio, m.nombremunicipio, e.nombreempresa from \\
+ (select identidad, idmunicipio, nombremunicipio from municipios where identidad in (2, 3) ) as m \\
+ left join \\
+  (select identidad, idmunicipio, nombreempresa from empresas where nombreempresa like '\%BANORTE\%') as e \\
+  on (m.idmunicipio = e.idmunicipio and m.identidad = e.identidad);
+  
 \end{enumerate}
 
 \end{document}
