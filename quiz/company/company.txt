@@ -1,0 +1,70 @@
+COMPANY quiz
+
+1.- create database <user>_company
+Sql:
+
+
+2.- insert 5 locations
+Sql:
+
+3.- insert 3 departaments
+Sql:
+
+4.- insert 5 employees
+Sql:
+
+5.- insert 5 projects
+Sql:
+
+6.- insert employees works_on projects (10 records)
+Sql:
+
+7.- insert 5 dependents 
+Sql:
+
+Querys
+
+8.- name, lastname of employees
+Sql:
+
+9.- number of departments
+Sql:
+
+10.- average of salary in employees
+Sql:
+
+11.- min salary in employees
+Sql:
+
+12.- max salary in employees
+Sql:
+
+13.- name of employee, name of department where is assigned
+Sql:
+
+14.- name of employee, name of dependents and relationship
+Sql:
+
+15.- name of departament, name of locations
+Sql:
+
+16.- number of employees by departament
+Sql:
+
+17.- number of employees by project
+Sql:
+
+18.- number of departments by locations 
+Sql:
+
+19.- number of employees group by sex
+Sql:
+
+20.- name of employees, department name (only if name start with 'A')
+Sql:
+
+
+
+
+
+
