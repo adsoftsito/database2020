@@ -1,5 +1,12 @@
 COMPANY quiz
 
+
+NOTA: cambiar tipo de dato en columna
+alter table empleados alter column salario type float using salario::float;
+
+
+
+
 1.- create database <user>_company
 Sql:
 
@@ -26,44 +33,70 @@ Querys
 
 8.- name, lastname of employees
 Sql:
+select nombre, apellidopat, apellidomat from empleados;
 
 9.- number of departments
 Sql:
+select count(*) from departamento;
 
 10.- average of salary in employees
 Sql:
+select avg(salario) from empleados;
 
 11.- min salary in employees
 Sql:
+select min(salario) from empleados;
+
 
 12.- max salary in employees
 Sql:
+select max(salario) from empleados;
+
 
 13.- name of employee, name of department where is assigned
 Sql:
+select empleados.nombre, departamento.nombre from empleados, departamento where empleados.depnumber = departamento.numero;
+select empleados.nombre, departamento.nombre from empleados join departamento on empleados.depnumber = departamento.numero;
+select e.nombre, d.nombre from empleados as e join departamento as d on e.depnumber = d.numero;
+
 
 14.- name of employee, name of dependents and relationship
 Sql:
+select e.nombre, d.nombredependencia, d.relacion from empleados as e join dependencia as d on e.idssn = d.essn;
+select e.nombre, d.nombredependencia, d.relacion from empleados as e, dependencia as d where e.idssn = d.essn;
+
 
 15.- name of departament, name of locations
 Sql:
+select departamento.nombre, deptlocations.location from departamento, deptlocations where departamento.dnumber=deptlocations.dnumber;
+
+select departamento.nombre, deptlocations.location from departamento join deptlocations on departamento.dnumber=deptlocations.dnumber;
 
 16.- number of employees by departament
 Sql:
 
+select depnumber, count(*) from empleados group by depnumber;
+
+
 17.- number of employees by project
 Sql:
+
+select pnumber, count(*) from workson group by pnumber;
 
 18.- number of departments by locations 
 Sql:
 
+select dnumber, count(*) from departamento group by dnumber;
+
 19.- number of employees group by sex
 Sql:
+
+select sexo, count(*) from empleados group by sexo;
 
 20.- name of employees, department name (only if name start with 'A')
 Sql:
 
-
+select e.nombre, d.nombre from (select depnumber, nombre from empleados) as e join (select numero, nombre from departamento where nombre like '%m%') as d on e.depnumber = d.numero;
 
 
 
