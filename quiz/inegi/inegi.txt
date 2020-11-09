@@ -27,56 +27,83 @@ Querys
 
 6.- numero de entidades
 Sql:
+select count(*) as numero_entidades from entidades;
 
 7.- numero de municipios por entidad
 Sql:
 
+select count(*), identidad from municipios group by identidad;
+
 8.- nombre entidad y nombre de sus municipios 
 Sql:
+select e.nombreentidad, m.nombremunicipio from municipios as m join entidades as e on e.identidad = m.identidad order by e.identidad;
 
 
 9.- numero de tipos de actividad que existen
 Sql:
 
+select count(*) from tipoactividad;
+
+
 10.- nombre de municipios donde el nombre de su entidad contenga una A 
 Sql:
+
+select nombremunicipio from municipios where identidad in (select identidad from entidades where nombreentidad like '%A%');
 
 
 11.- nombre del municipio, nombre de su empresa, latitud y longitud 
 Sql:
 
+select m.nombremunicipio, e.nombreempresa, e.latitud, e.longitud from municipios as m, empresas as e where m.identidad = e.identidad and m.idmunicipio=e.idmunicipio;
+
+select m.nombremunicipio, e.nombreempresa, e.latitud, e.longitud from municipios as m join empresas as e on m.identidad = e.identidad and m.idmunicipio=e.idmunicipio;
 
 12.- numero de empresas por municipio
 Sql:
+
+select count(*), idmunicipio from empresas group by idmunicipio;
 
 
 13.- numero de empresas por entidad
 Sql:
 
+select count(*), identidad from empresas group by identidad;
+
 
 14.- numero de empresas por tipo de actividad
 Sql:
+
+select count(*), codigoactividad from empresas group by codigoactividad;
 
 
 15.- nombre de los municipios que tengan empresas cuyo nombre empiece con BANCO
 Sql:
 
+select nombremunicipio from municipios where idmunicipio in (select idmunicipio from empresas where nombreempresa like 'BANCO%');
+
 
 16.- nombre de la entidad, nombre del municipio, nombre de la empresa y su código postal 
 Sql:
 
+select e.nombreentidad, m.nombremunicipio, em.nombreempresa, em.codigopostal from entidades as e, municipios as m, empresas as em where e.identidad = m.identidad and m.idmunicipio = em.idmunicipio and m.identidad = em.identidad order by e.identidad, m.idmunicipio;
 
 17.- nombre de la empresa, descripción de su tipo de actividad
 Sql:
+
+select empresas.nombreempresa, tipoactividad.descripcion from empresas, tipoactividad where empresas.codigoactividad = tipoactividad.codigoactividad;
+
+select empresas.nombreempresa, tipoactividad.descripcion from empresas join tipoactividad on empresas.codigoactividad = tipoactividad.codigoactividad;
 
 
 18.- nombre del municipio, nombre de la empresa, latitud, longitud, código de actividad y nombre de tipo de actividad 
 Sql:
 
+select municipios.nombremunicipio, empresas.nombreempresa, empresas.latitud, empresas.longitud, tipoactividad.codigoactividad, tipoactividad.descripcion from municipios, empresas, tipoactividad where municipios.identidad = empresas.identidad and municipios.idmunicipio=empresas.idmunicipio and empresas.codigoactividad = tipoactividad.codigoactividad;
 
 19.- nombre de la empresa, calle, numero, colonia ordenados por nombre
-
+Sql:
+select nombreempresa, calle, numero, colonia from empresas order by nombreempresa;
 
 20.- numero de empresas por entidad, ordenados por entidad, pero solo existen mas de 2 empresas por entidad
 
-
+select count(*), identidad from empresas group by identidad having count(*) > 2 order by identidad;
