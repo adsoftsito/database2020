@@ -1,0 +1,85 @@
+FACTURAS quiz
+
+
+Diagrama:
+
+https://github.com/sergiojmnz/BD_SergioJimenez/blob/master/Caso%20facturas.pdf
+
+
+1.- create database <user>_facturas
+Sql:
+
+
+2.- insert 10 clientes
+Sql:
+
+3.- insert 20 facturas
+Sql:
+
+
+Querys
+
+4.- numero de clientes
+Sql:
+
+5.- numero de facturas emitidas
+Sql:
+
+
+8.- rfc, nombre, dirección ordenada por rfc y nombre 
+Sql:
+
+
+9.- total facturado
+Sql:
+
+
+
+10.- total de iva
+Sql:
+
+
+
+11.- factura de menor importe
+Sql:
+
+
+12.- factura de mayor importe
+Sql:
+
+
+
+13.- promedio del importe de facturacion
+Sql:
+
+
+
+14.- numero de facturas por cliente
+Sql:
+
+
+
+15.- rfc, nombre del cliente, concepto y total de facturas
+Sql:
+
+
+
+16.- nombre de clientes con facturas mayores a 1000
+Sql:
+
+
+17.- rfc de clientes con facturas cuyo concepto contenga "COMPRA" y menores de 1000
+Sql:
+
+
+
+18.- sumatoria de subtotal, iva y total
+Sql:
+
+
+19.- concepto, iva, subtotal y total de clientes cuyo RFC empiece con "C" ordenados por total y concepto 
+Sql:
+
+
+20.- numero de facturas por cliente, pero solo si existen mas de 3 facturas
+
