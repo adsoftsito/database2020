@@ -1,0 +1,96 @@
+AMAZON model
+
+- Proveedores con codigo, nombre, rating
+- Productos con codigo, nombre, descripcion, precio, diasentrega, categoria[laptops, libros, juegos, juguetes, celulares], empresa de reparto [dhl, fedex, ups]
+- Clientes con codigo, usuario, password, nombre, direccion
+
+
+- Los clientes compran n productos (n productos pueden ser comprados por n clientes) - NOTA: tabla nueva llamada ventas, guardar también cantidad comprado, precio_venta, subtotal (precio X cantidad), iva, total y fecha_venta
+
+- Los proveedores surten n productos (un productos puede se surtido por n proveedores)
+NOTA: tabla nueva llamada compras, guardar también cantidad surtida, precio_compra, subtotal (precio X cantidad), iva, total y fecha_compra
+
+
+1.- create database <user>_amazon
+Sql:
+
+
+2.- insert 5 proveedores
+Sql:
+
+3.- insert 10 productos
+Sql:
+
+4.- insert 5 clientes
+
+5.- insert 10 ventas
+
+6.- insert 10 compras
+
+
+Querys
+
+7.- total de clientes cuyo nombre contenga una A
+Sql:
+
+
+
+8.- total de ventas de productos con precio > 500
+Sql:
+
+
+
+9.- total de iva en las ventas de productos con precio menor a 200 y que contenga la frase "LAP"
+Sql:
+
+
+
+10.- venta de menor importe para productos con iva = 0
+Sql:
+
+
+
+11.- total de compras realizadas a proveedores de la empresa
+Sql:
+
+
+
+
+12.- promedio del importe de ventas del mes actual
+Sql:
+
+
+
+13.- numero de compras del periodo fiscal actual (1/ene2020 a 31/dic/2020)
+Sql:
+
+
+
+14.- nombre del cliente, dirección, código producto comprado, cantidad, precio_venta, iva, importe y total
+Sql:
+
+
+15.- nombre del proveedor, rating, código producto surtido, cantidad, precio_compra, iva, importe y total
+Sql:
+
+
+16.- nombre de clientes con facturas mayores a 1000 del mes actual
+Sql:
+
+
+
+17.- sumatoria de subtotal, iva y total de ventas del primer semestre del periodo fiscal
+Sql:
+
+
+18.- sumatoria de subtotal, iva y total de compras del primer trimestre del periodo fiscal
+Sql:
+
+
+19.- numero de compras por proveedor
+Sql:
+
+
+20.- numero de ventas por cliente, pero solo si existen mas de 3 facturas
+
+
