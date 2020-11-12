@@ -1,0 +1,14 @@
+AMAZON model
+
+- Proveedores con codigo, nombre, rating
+- Productos con codigo, nombre, descripcion, precio, diasentrega, categoria[laptops, libros, juegos, juguetes, celulares], empresa de reparto [dhl, fedex, ups]
+- Clientes con codigo, usuario, password, nombre, direccion
+
+
+- Los clientes compran n productos (n productos pueden ser comprados por n clientes) - NOTA: tabla nueva llamada ventas, guardar también cantidad comprado, precio_venta, subtotal (precio X cantidad), iva, total y fecha_venta
+
+- Los proveedores surten n productos (un productos puede se surtido por n proveedores)
+NOTA: tabla nueva llamada compras, guardar también cantidad surtida, precio_compra, subtotal (precio X cantidad), iva, total y fecha_compra
+
+
+
