@@ -33,64 +33,82 @@ Querys
 7.- total de clientes cuyo nombre contenga una A
 Sql:
 
+select * from cliente where nombre like '%D%';
 
 
 8.- total de ventas de productos con precio > 500
 Sql:
 
+select sum(total) from ventas where precioventa > 5000;
 
 
 9.- total de iva en las ventas de productos con precio menor a 200 y que contenga la frase "LAP"
 Sql:
+
+select sum(iva) from ventas where precioventa < 5000 and codproducto in (select codigoprod from productos where nombre like '%Estufa%');
 
 
 
 10.- venta de menor importe para productos con iva = 0
 Sql:
 
+select min(iva) from ventas where iva>10;
 
 
 11.- total de compras realizadas a proveedores de la empresa
 Sql:
 
-
+select sum(total) from compras;
 
 
 12.- promedio del importe de ventas del mes actual
 Sql:
 
-
+select avg(total) from ventas where extract(MONTH from fechaventa)=11;
 
 13.- numero de compras del periodo fiscal actual (1/ene2020 a 31/dic/2020)
 Sql:
 
+select count(*) from compras where extract(YEAR from fechacompra)=2020;
 
 
 14.- nombre del cliente, dirección, código producto comprado, cantidad, precio_venta, iva, importe y total
 Sql:
 
+select nombre, apellidopat, apellidomat, calleyav, codproducto, cantidadcomprado, precioventa, iva, total from ventas, cliente where ventas.codcliente = cliente.codigocliente;
 
 15.- nombre del proveedor, rating, código producto surtido, cantidad, precio_compra, iva, importe y total
 Sql:
+select nombre, rating, codproducto, cantidadsurtida, preciocompra, iva, total from compras, provedores where compras.codprovedor = provedores.codigoprov;
 
 
 16.- nombre de clientes con facturas mayores a 1000 del mes actual
 Sql:
 
+select nombre from cliente where codigocliente in (select codcliente from ventas where total > 10000 and extract(MONTH from fechaventa)=11);
 
 
 17.- sumatoria de subtotal, iva y total de ventas del primer semestre del periodo fiscal
 Sql:
 
+select sum(subtotal), sum(iva), sum(total) from ventas where extract(QUARTER from fechaventa)=4 and extract(YEAR from fechaventa)=2020;
+
 
 18.- sumatoria de subtotal, iva y total de compras del primer trimestre del periodo fiscal
 Sql:
+
+select sum(subtotal), sum(iva), sum(total) from compras where extract(QUARTER from fechacompra)=4 and extract(YEAR from fechacompra)=2020;
 
 
 19.- numero de compras por proveedor
 Sql:
 
+select codprovedor, count(*) from compras group by codprovedor;
+
 
 20.- numero de ventas por cliente, pero solo si existen mas de 3 facturas
+
+select codcliente, count(*) from ventas group by codcliente having count(*) > 1;
+
 
 
