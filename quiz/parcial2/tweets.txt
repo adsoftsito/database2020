@@ -1,0 +1,91 @@
+TWEETS parcial 2
+
+Usuarios(idusuario, usuario, email, passwd, telefono, nombre, fecha_alta ) 
+Tweets (idtweet, tweet, urlimagen, fecha_post )
+Los Usuarios escribe Tweets
+
+
+1.- create database <user>_tweets
+Sql:
+
+
+2.- insert 10 usuarios con fecha de alta (tipo timestamp)
+Sql:
+
+3.- insert 20 tweets con fecha de post (tipo timestamp)
+Sql:
+
+
+Querys
+
+4.- numero de usuarios
+Sql:
+
+
+
+5.- numero de tweets por usuario
+Sql:
+
+
+
+8.- todos los datos de usuarios dados de alta el mes de noviembre
+Sql:
+
+
+9.- total tweets del periodo 2020
+Sql:
+
+
+
+10.- total de tweets que contengan '%SOFTWARE%' del segundos semestre del 2020
+Sql:
+
+
+
+11.- nombre de usuario, tweet y fecha_post
+Sql:
+
+
+
+12.- nombres de usuario que tengan tweets del día de hoy 
+Sql:
+
+
+
+13.- nombres de usuario que tengan tweets que contengan '%SOFTWARE%' y del mes actual
+Sql:
+
+
+
+14.- numero de tweets por usuarios, pero solo si tiene mas de 2 
+Sql:
+
+
+
+15.- nombre usuario, tweet, fecha_post, url_imagen, solo de tweets del mes actual
+Sql:
+
+
+
+16.- nombre de usuarios sin tweets
+Sql:
+
+
+
+17.- tweets del mes actual ordenados por usuario y fecha en orden descendente
+Sql:
+
+
+
+18.- tweets y fecha_post de usuarios de gmail
+Sql:
+
+
+
+19.- tweets y fecha_post de usuarios de que no sean de gmail
+Sql:
+
+
+
+20.- nombre de usuarios, tweet y fecha_post, pero solo de usuarios donde su email contenga '%live.com%'
+
