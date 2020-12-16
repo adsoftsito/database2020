@@ -1,0 +1,28 @@
+RUBRICA Parcial 3
+
+Caso Twitter
+
+Fecha entrega:  Ene 2021 (Dia del ordinario)
+
+1.- Crear API para modelo usando spring-boot, probar en localhost:8080
+  - Controller : usuarios
+  - Controller : tweets
+ 
+(1 - 40) pts.
+
+2.- Crear frontend en angular para modelo twitter, probar en localhost:4200
+  - Home (tweets)
+  - Usuarios
+  - About
+
+(1 - 30) pts
+
+3.- Hacer deploy de API en heroku 
+
+(1 - 15) pts
+
+4.- Hacer deploy de frontend en firebase
+
+(1 - 15) pts
+
+
