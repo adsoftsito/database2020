@@ -1,0 +1,15 @@
+Extraordinario base de datos
+
+Operadores(idoperador, numerolicencia, curp, nombre, fecha_alta ) 
+Trailers(idunidad, modelo, marca, placas)
+Viajes (idviaje, idoperador, idunidad, origen, destino, km, fecha_viaje )
+Los Operadores manejan 1 trailer y realizan n viajes.
+
+1.- Crear model E-R  (30 pts)
+
+2.- Crear Modelo Relacional  (30 pts)
+
+3.- Crear base de datos en postgres (30 pts) 
+
+4.- Insertar 10 registros de cada tabla validando llaves primarias y foraneas (10 pts)
+
